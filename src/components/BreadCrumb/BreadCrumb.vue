@@ -19,5 +19,5 @@
 
 <style lang="stylus" scoped>
   .bread-item
-    padding: 0
+    padding: 0.5rem
 </style>

@@ -1,13 +1,14 @@
 <template>
   <div slot="header" class="header toolbar dark">
     <button>
-      <i>menu</i>
+      <i class="on-left">cloud_queue</i>
+      天元云
     </button>
     <q-toolbar-title></q-toolbar-title>
-    <LabelMenu :title="title1" :hasList="true" :lists="mailLists"></LabelMenu>
-    <LabelMenu :title="title2" :hasList="true" :lists="mailLists"></LabelMenu>
-    <LabelMenu :title="title3" :hasList="true" :lists="mailLists"></LabelMenu>
-    <LabelMenu :title="title4" :hasList="true" :lists="mailLists"></LabelMenu>
+    <LabelMenu :title="title1" :lists="mailLists"></LabelMenu>
+    <LabelMenu :title="title2" :lists="mailLists"></LabelMenu>
+    <LabelMenu :title="title3" :lists="userActions"></LabelMenu>
+    <LabelMenu :title="title4"></LabelMenu>
   </div>
 </template>
 
@@ -18,8 +19,8 @@
       return {
         title1: {
           label: '工单',
-          icon: 'mail',
-          state: '3'
+          icon: '',
+          state: ''
         },
         title2: {
           label: '',
@@ -27,15 +28,35 @@
           state: '3'
         },
         title3: {
-          label: '工单',
-          icon: 'mail',
+          label: '',
+          icon: 'people',
           state: ''
         },
         title4: {
           label: '',
-          icon: 'mail',
+          icon: 'history',
           state: ''
         },
+        userActions: [
+          {
+            content: '个人信息',
+            clickFun: () => {
+              console.log('Click Item One')
+            }
+          },
+          {
+            content: '修改密码',
+            clickFun: () => {
+              console.log('Click Item Two')
+            }
+          },
+          {
+            content: '注销',
+            clickFun: () => {
+              console.log('Click Item Three')
+            }
+          }
+        ],
         mailLists: [
           {
             content: 'Item One',
@@ -54,6 +75,12 @@
             clickFun: () => {
               console.log('Click Item Three')
             }
+          },
+          {
+            content: 'Item Four',
+            clickFun: () => {
+              console.log('Click Item Four')
+            }
           }
         ]
       }
@@ -66,11 +93,9 @@
 
 <style lang="stylus" scoped>
   .header
-    position: fixed
-    top: 0
     .label
       position: reltive
-      line-height: 100%
+      line-height
       cursor: pointer
       .list
         position: relative

@@ -1,9 +1,16 @@
 <template>
   <div class="login-page">
-    <!-- <HeaderNav></HeaderNav>  -->
-    <!-- <SideBar></SideBar>
-    <StateBox :state="state"></StateBox> -->
-    <DataTable :dataTable="dataTable" ></DataTable>
+    <HeaderNav></HeaderNav>
+    <div class="container">
+      <SideBar></SideBar>
+      <div class="main">
+        <div class="main-title">
+          <BreadCrumb :breadList="breadList"></BreadCrumb>
+        </div>
+        <!-- <StateBox :state="state"></StateBox>
+        <DataTable :dataTable="dataTable" ></DataTable> -->
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,6 +19,7 @@
   import SideBar from 'components/Menu/SideBar'
   import StateBox from 'components/StateBox/StateBox'
   import DataTable from 'components/Table/DataTable'
+  import BreadCrumb from 'components/BreadCrumb/BreadCrumb'
 
   import { Platform } from 'quasar'
   import table from '../data/table.json'
@@ -22,7 +30,8 @@
       HeaderNav,
       SideBar,
       StateBox,
-      DataTable
+      DataTable,
+      BreadCrumb
     },
     data () {
       return {
@@ -106,7 +115,21 @@
           max: 10,
           min: 0,
           model: 8
-        }
+        },
+        breadList: [
+          {
+            title: '用户中心',
+            to: ''
+          },
+          {
+            title: '用户组管理',
+            to: ''
+          },
+          {
+            title: '添加用户',
+            to: ''
+          }
+        ]
       }
     },
     computed: {
@@ -125,7 +148,23 @@
   .login-page
     width: 100vw
     height: 100vh
-    background: #efeeee
+    .container
+      position: absolute
+      top: 48px
+      left: 0
+      right: 0
+      bottom: 0
+    .main
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 200px
+      .main-title
+        margin: 0 20px
+        min-height: 62px
+        line-height: 62px
+        position: relative
     .data-table
       width: 80%
 </style>

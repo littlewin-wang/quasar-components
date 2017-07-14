@@ -40,7 +40,7 @@
       width: 1rem
       height: 1rem
       border-radius: 50%
-      font-size: 12px
+      font-size: 14px
   .f14
     font-size: 14px
   
