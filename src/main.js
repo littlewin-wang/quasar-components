@@ -12,10 +12,15 @@ import router from './router'
 
 Vue.use(Quasar) // Install Quasar Framework
 
+// import API from './api/index'
+// API.IssuesResource().then(res => {
+//   console.log(res)
+// })
+
 Quasar.start(() => {
   /* eslint-disable no-new */
   new Vue({
-    el: '#q-app',
+    el: '#app',
     router,
     render: h => h(require('./App'))
   })
