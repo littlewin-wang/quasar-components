@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "id": 101,
+      "text": "something is not right"
+    },
+    {
+      "id": 102,
+      "text": "crash on login"
+    }
+  ],
+  "total": {
+    "data": {
+      "exchange_count": "10",
+      "share_count": "23",
+      "patent_count": "7",
+      "article_count": "37",
+      "exchangeRecords": []
+    },
+    "success": true
+  }
+}
