@@ -1,11 +1,11 @@
 <template>
   <div class="login-page">
-     <Login class="login-main"></Login> 
+     <Login class="login-main"></Login>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import Login from 'components/Login/Login'
+  import Login from 'src/components/Login/Login'
   import { mapGetters, mapActions } from 'vuex'
   export default {
     components: {

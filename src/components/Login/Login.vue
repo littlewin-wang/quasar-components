@@ -10,14 +10,12 @@
         :autofocus="true"
         placeholder="请输入用户名"
         v-model="username">
-      </input>
     </div>
     <div class="input-group">
       <input
         placeholder="请输入密码"
         type="password"
         v-model="password">
-      </input>
     </div>
     <div class="input-group">
       <label>
@@ -70,7 +68,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  .login-form 
+  .login-form
     display: flex
     flex-direction: column
     align-items: center
@@ -100,7 +98,7 @@
       margin-top: 30px
       width: 70%
       input
-        width: 100%        
-      button 
-        width: 100% 
+        width: 100%
+      button
+        width: 100%
 </style>

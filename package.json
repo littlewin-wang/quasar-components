@@ -1,15 +1,18 @@
 {
-  "name": "quasar-app",
+  "name": "nap-fe",
   "version": "0.0.1",
-  "description": "A Quasar App",
-  "author": "Your Name",
+  "description": "The web console of Firewall Management Platform.",
+  "author": "littlewin <littlewin.wang@gmail.com>",
   "scripts": {
     "clean": "node build/script.clean.js",
     "dev": "node build/script.dev.js",
     "build": "node build/script.build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "mock": "node_modules/.bin/json-server --watch mock/db.json --port 9090",
+    "mockdev": "npm run mock & npm run dev"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-runtime": "^6.0.0",
     "fastclick": "^1.0.6",
     "material-design-icons": "^3.0.1",
@@ -17,7 +20,8 @@
     "quasar-framework": "^0.13.4",
     "roboto-fontface": "^0.7.0",
     "vue": "^2.3.0",
-    "vue-router": "^2.0.0"
+    "vue-router": "^2.0.0",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -47,6 +51,7 @@
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.17.0",
     "json-loader": "^0.5.4",
+    "json-server": "^0.11.2",
     "opn": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^1.3.1",
     "postcss-loader": "^1.0.0",

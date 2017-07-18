@@ -6,7 +6,8 @@ module.exports = {
     quasar: path.resolve(__dirname, '../node_modules/quasar-framework/'),
     src: path.resolve(__dirname, '../src'),
     assets: path.resolve(__dirname, '../src/assets'),
-    components: path.resolve(__dirname, '../src/components')
+    components: path.resolve(__dirname, '../src/components'),
+    views: path.resolve(__dirname, '../src/views')
   },
 
   // Progress Bar Webpack plugin format
@@ -14,7 +15,7 @@ module.exports = {
   progressFormat: ' [:bar] ' + ':percent'.bold + ' (:msg)',
 
   // Default theme to build with ('ios' or 'mat')
-  defaultTheme: 'mat',
+  defaultTheme: 'ios',
 
   build: {
     env: require('./prod.env'),
@@ -30,7 +31,7 @@ module.exports = {
     env: require('./dev.env'),
     cssSourceMap: true,
     // auto open browser or not
-    openBrowser: false,
+    openBrowser: true,
     publicPath: '/',
     port: 8080,
 
@@ -44,7 +45,15 @@ module.exports = {
     // Proxy your API if using any.
     // Also see /build/script.dev.js and search for "proxy api requests"
     // https://github.com/chimurai/http-proxy-middleware
-    proxyTable: {}
+    proxyTable: {
+      '/api': {
+        target: 'http://localhost:9090/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
   }
 }
 
