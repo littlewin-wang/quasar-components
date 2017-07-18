@@ -2,7 +2,7 @@
   <div class="login-page">
     <HeaderNav></HeaderNav>
     <div class="container">
-      <SideBar></SideBar>
+      <SideBar :list="sideList"></SideBar>
       <div class="main">
         <div class="main-title">
           <BreadCrumb :breadList="breadList"></BreadCrumb>
@@ -35,6 +35,35 @@
     },
     data () {
       return {
+        sideList: {
+          title: '概览',
+          items: [
+            {
+              content: '概览',
+              isActive: true
+            },
+            {
+              content: '设备',
+              isActive: false
+            },
+            {
+              content: '设备组',
+              isActive: false
+            },
+            {
+              content: '连接凭证',
+              isActive: false
+            },
+            {
+              content: '网络对象',
+              isActive: false
+            },
+            {
+              content: '服务对象',
+              isActive: false
+            }
+          ]
+        },
         dataTable: {
           table,
           config: {

@@ -2,18 +2,13 @@
   <div class="side-bar">
     <div class="title">
       <span class="title-content">
-        用户信息
+        {{list.title}}
       </span>
     </div>
     <div class="list no-border">
-      <div class="item item-link active">
+      <div class="item item-link" :class="{ active: item.isActive }" v-for="item in list.items" v-bind:key="item.content">
         <div class="item-content">
-          用户信息
-        </div>
-      </div>
-      <div class="item item-link">
-        <div class="item-content">
-          用户组管理
+          {{item.content}}
         </div>
       </div>
     </div>
@@ -22,6 +17,9 @@
 
 <script>
   export default {
+    props: {
+      list: Object
+    },
     data () {
       return {
       }
